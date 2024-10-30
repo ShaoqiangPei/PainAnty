@@ -1,4 +1,22 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+//构建脚本
+buildscript {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+    }
+}
+
+//allprojects {
+//    repositories {
+//        maven { url 'https://maven.aliyun.com/repository/google' }
+//        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+//        maven { url 'https://maven.aliyun.com/repository/public' }
+//    }
+//}
+
+//引入整个project的plugin
 plugins {
     id 'com.android.application' version '7.4.2' apply false
     id 'com.android.library' version '7.4.2' apply false

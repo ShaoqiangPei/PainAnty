@@ -1,0 +1,83 @@
+/**
+ * 在主项目的根目录下创建config.gradle文件
+ * 在这里单独处理统一依赖问题
+ * 注意需要在根目录的build.gradle中进行引入
+ */
+ext {
+    //搜索: https://www.jianshu.com/p/d90d26fa7770
+
+    //===android相关====
+    proVersionCode = 20241016.01 //eg: 20241016.01 表示 2024-10-16日第01版本
+    proVersionName = 1.0.0 //eg: 1.0.0 表示 1(大版本更新).0(新功能).0(bug修复)
+
+    proCurrentSdkVersion = 33
+    proMinSdkVersion = 24
+
+    //example中涉及的部分配置
+    proExampleApplicationSpace = "com.painanty"
+    androidExample = [
+            namespace:"${proExampleApplicationSpace}",
+            //项目id
+            applicationId:"${proExampleApplicationSpace}",
+    ]
+
+    //library中涉及的配置
+    android = [
+            namespace:"com.painanty",
+            //编译的SDK版本
+            compileSdkVersion: ${proCurrentSdkVersion},
+//            //编译的Tools版本
+//            buildToolsVersion: "25.0.3",
+            //支持SDK的最低版本
+            minSdkVersion: ${proMinSdkVersion},
+            //支持SDK的目标版本
+            targetSdkVersion : ${proCurrentSdkVersion},
+            //版本号
+            versionCode:${proVersionCode},
+            //版本名称
+            versionName:"${proVersionName}",
+
+            testInstrumentationRunner: "androidx.test.runner.AndroidJUnitRunner",
+            consumerProguardFiles: "consumer-rules.pro"
+    ]
+
+    //====依赖库相关===
+    //依赖库版本
+    supportLibrary = "26.1.0"
+    //库依赖
+    supportDependencies = [
+            //基础库
+            implementation_androidx_core_ktx:"androidx.core:core-ktx:1.7.0",
+            implementation_androidx_appcompat:"androidx.appcompat:appcompat:1.4.1",
+            implementation_android_material:"com.google.android.material:material:1.5.0",
+            implementation_androidx_constraintlayout:"androidx.constraintlayout:constraintlayout:2.1.3",
+            testImplementation_junit:"junit:junit:4.13.2",
+            androidTestImplementation_androidx_test_ext_junit:"androidx.test.ext:junit:1.1.3",
+            androidTestImplementation_androidx_test_espresso_core:"androidx.test.espresso:espresso-core:3.4.0",
+
+
+
+//            //retroefit2.0
+//            compile_retrofit2:"com.squareup.retrofit2:retrofit:2.3.0",
+//            //retrofit2.0对gson支持
+//            compile_retrofit2_converter_gson:"com.squareup.retrofit2:converter-gson:2.2.0",
+//            //retrofit2.0支持内置log打印
+//            compile_logging_interceptor:"com.squareup.okhttp3:logging-interceptor:3.4.1",
+//            //添加Retrofit2.0对Rx的支持(RxJava2.x时使用，RxJava1.x时不支持)
+//            compile_retrofit2_adapter_rxjava2:"com.squareup.retrofit2:adapter-rxjava2:2.3.0",
+
+            //rxjava2.x
+            compile_rx_android2:"io.reactivex.rxjava2:rxandroid:2.0.1",
+            compile_rx_java2:"io.reactivex.rxjava2:rxjava:2.1.0",
+
+
+//            //Glide
+//            compile_glide4:"com.github.bumptech.glide:glide:4.0.0",
+//            annotationProcessor_glide4_compiler:"com.github.bumptech.glide:compiler:4.0.0",
+
+            //ZXing二维码
+            compile_zxing_core:"com.google.zxing:core:3.3.0"
+
+    ]
+
+}
