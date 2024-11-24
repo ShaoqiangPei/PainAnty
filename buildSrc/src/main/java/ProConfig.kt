@@ -7,8 +7,12 @@
 object ProConfig {
 
     //==========项目全局==========
-    val proVersionCode = 2024101601 //eg: 2024101601 表示 2024-10-16日第01版本
-    val proVersionName = "1.0.0" //eg: 1.0.0 表示 1(大版本更新).0(新功能).0(bug修复)
+    val proVersionCode = 2024112401 //eg: 2024101601 表示 2024-10-16日第01版本
+    val proVersionName = "1.1.0" //eg: 1.0.0 表示 1(大版本更新).0(新功能).0(bug修复)
+    //==jitpack相关配置
+    val group = "com.github.ShaoqiangPei"
+    val groupId = "com.pain.common"
+    val artifactId = "android-common"
 
     //==========项目基本配置==========
     val proCurrentSdkVersion = 33

@@ -1,7 +1,13 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    //jitpack所需配置
+    id 'maven-publish'
 }
+
+//jitpack所需配置
+group = ProConfig.group
+version = ProConfig.proVersionName
 
 android {
     namespace ProConfig.commonNameSpace
@@ -38,4 +44,19 @@ dependencies {
     testImplementation ProConfig.testImplementation_junit
     androidTestImplementation ProConfig.androidTestImplementation_androidx_test_ext_junit
     androidTestImplementation ProConfig.androidTestImplementation_androidx_test_espresso_core
+}
+
+//jitpack所需配置
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = ProConfig.groupId
+                artifactId = ProConfig.artifactId
+                version = ProConfig.proVersionName
+            }
+        }
+    }
 }
