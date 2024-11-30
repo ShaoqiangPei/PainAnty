@@ -5,10 +5,11 @@
  * created on 2024/10/23
  */
 object ProConfig {
+    //gradle下载地址: https://mirrors.cloud.tencent.com/gradle/
 
     //==========项目全局==========
-    val proVersionCode = 2024112401 //eg: 2024101601 表示 2024-10-16日第01版本
-    val proVersionName = "1.1.0" //eg: 1.0.0 表示 1(大版本更新).0(新功能).0(bug修复)
+    val proVersionCode = 2024113001 //eg: 2024101601 表示 2024-10-16日第01版本
+    val proVersionName = "1.1.1" //eg: 1.0.0 表示 1(大版本更新).0(新功能).0(bug修复)
     //==jitpack相关配置
     val group = "com.github.ShaoqiangPei"
     val groupId = "com.pain.common"
